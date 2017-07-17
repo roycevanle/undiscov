@@ -1,0 +1,34 @@
+﻿@model Vidly.Models.userID
+@{
+    ViewBag.Title = "CreateThings";
+}
+
+
+<h2>Hi.</h2>
+<h3>Byer</h3>
+
+<p>Use this area to provide additional information.</p>
+<form action="Account/Rand" method="POST">
+    <input type="text" name="valueINeed">
+    <input type="submit" value="View Report">
+</form>
+
+
+@using (Ajax.BeginForm("Indexx", "CreateUser",
+                                        new AjaxOptions { UpdateTargetId = "divInterestDeatils" }))
+{
+    <fieldset>
+        <legend>Calulate Simple Interest</legend>
+        <div id="divInterestDeatils"></div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.xid)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.xid)
+        </div>
+        <p>
+            <input type="submit" value="Calculate" />
+        </p>
+    </fieldset>
+}
